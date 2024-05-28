@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 5320291653749962765}
   - component: {fileID: 2014768501281991673}
   - component: {fileID: 1544947925120560832}
+  - component: {fileID: 7079178056615834031}
   m_Layer: 0
   m_Name: RAM
   m_TagString: Untagged
@@ -525,9 +526,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7436247392356874791}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9992293, z: -0, w: 0.039252635}
+  m_LocalRotation: {x: 0, y: 0.99922943, z: 0, w: 0.03925117}
   m_LocalPosition: {x: -0.9611, y: 1.384101, z: 1.3423}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8687648198483977341}
@@ -537,7 +538,7 @@ Transform:
   - {fileID: 5073257439631365537}
   - {fileID: 8371097712426739088}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 175.501, z: 0}
 --- !u!65 &5320291653749962765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -708,3 +709,18 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &7079178056615834031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436247392356874791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec4f843f0a09a44f8357812ed388b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoRAM: DDR5
+  frecuencia: 800
+  capacidad: 12
