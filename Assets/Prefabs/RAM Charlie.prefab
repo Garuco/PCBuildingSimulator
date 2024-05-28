@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &170394236465987422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2369924613189834881, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 669025377795b574da66d9bb2472fcab, type: 2}
+    - target: {fileID: 2423518492099442201, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: capacidad
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423518492099442201, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: frecuencia
+      value: 1300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916360395434199105, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: tipoRAM
+      value: DDR5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9735
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3475381
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.03925117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99922943
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 175.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971552655425571738, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436247392356874791, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_Name
+      value: RAM Charlie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436247392356874791, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: m_TagString
+      value: Objeto
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}

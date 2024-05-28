@@ -1,15 +1,36 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;   
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketHandler : MonoBehaviour
 {
-    public Transform component;
+    private Transform component = null;
     public Transform socket;
+    public RamComp motherboardScript;
+    private bool allowed = false;
 
     private XRSocketInteractor holsterSocket;
     public float activationDistance = 1.5f; // Distancia para activar el Socket
+
+    void OnTriggerEnter(Collider other)
+    {
+        // Incrementar contador de objetos cuando un objeto entra en la gaveta
+        Compatibilidad ram = other.GetComponent<Compatibilidad>();
+        Debug.Log(ram.tipoRAM + " " + ram.frecuencia + " " + ram.capacidad);
+        component = other.transform;
+        if (ram.ObtenerTipo() == motherboardScript.tipoCompatible && ram.ObtenerFrecuencia() <= motherboardScript.frecuenciaMaxima && ram.ObtenerCapacidad() <= motherboardScript.capacidadMaxima)
+        {
+            Debug.Log("RAM compatible");
+            allowed = true;
+        }
+        else
+        {
+            Debug.Log("RAM no compatible");
+            allowed = false;
+        }
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -21,32 +42,34 @@ public class SocketHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Obtener la dirección de las caras
-        Vector3 direccionCaraDelantera = transform.TransformDirection(-component.forward);
-        Vector3 direccionCaraTrasera = transform.TransformDirection(socket.forward);
-
-        // Calcular el producto punto
-        float productoPunto = Vector3.Dot(direccionCaraDelantera.normalized, direccionCaraTrasera.normalized);
-
-        float distance = Vector3.Distance(component.position, socket.position);
-        if (distance <= activationDistance)
+        if(component != null)
         {
-            // Si el producto punto es negativo, las caras están una frente a la otra
-            if (productoPunto < -0.7)
+            // Obtener la direcciï¿½n de las caras
+            Vector3 direccionCaraDelantera = transform.TransformDirection(-component.forward);
+            Vector3 direccionCaraTrasera = transform.TransformDirection(socket.forward);
+
+            // Calcular el producto punto
+            float productoPunto = Vector3.Dot(direccionCaraDelantera.normalized, direccionCaraTrasera.normalized);
+
+            float distance = Vector3.Distance(component.position, socket.position);
+            if (distance <= activationDistance && allowed)
             {
-                //Debug.Log("La cara delantera del Cubo1 está frente a la cara trasera del Cubo2.");
-                holsterSocket.enabled = true;
+                // Si el producto punto es negativo, las caras estï¿½n una frente a la otra
+                if (productoPunto < -0.7)
+                {
+                    //Debug.Log("La cara delantera del Cubo1 estï¿½ frente a la cara trasera del Cubo2.");
+                    holsterSocket.enabled = true;
+                }
+                else
+                {
+                    //Debug.Log("Las caras no estï¿½n una frente a la otra.");
+                    holsterSocket.enabled = false;
+                }
             }
             else
             {
-                //Debug.Log("Las caras no están una frente a la otra.");
                 holsterSocket.enabled = false;
             }
         }
-        else
-        {
-            holsterSocket.enabled = false;
-        }
-
     }
 }
