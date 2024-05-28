@@ -39,7 +39,7 @@ public class CpuSocketHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("Las caras no están una frente a la otra.");
+                //Debug.Log("Las caras no están una frente a la otra.");
                 holsterSocket.enabled = false;
             }
         }
