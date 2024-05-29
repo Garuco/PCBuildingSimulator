@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 2423518492099442201}
   m_Layer: 0
   m_Name: RAM
-  m_TagString: Objeto
+  m_TagString: RAM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,6 +753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2607fc1e9839fd4fa6424ac0a7ad2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoRAM: DDR4
+  tipoComponente: DDR4
   frecuencia: 900
   capacidad: 16

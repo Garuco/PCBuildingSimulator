@@ -6,6 +6,11 @@ TagManager:
   tags:
   - cierreGaveta
   - Objeto
+  - SamplesInfoPanel
+  - CPU
+  - RAM
+  - Graphic
+  - M2
   layers:
   - Default
   - TransparentFX

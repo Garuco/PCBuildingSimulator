@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Compatibilidad : MonoBehaviour
 {
-    public string tipoRAM;
+    public string tipoComponente;
     public int frecuencia;
     public int capacidad;  // en GB
 
     // M�todo para obtener las propiedades de la RAM
     public string ObtenerTipo()
     {
-        return tipoRAM;
+        return tipoComponente;
     }
 
     public int ObtenerFrecuencia()

@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: frecuencia
       value: 1300
       objectReference: {fileID: 0}
+    - target: {fileID: 2423518492099442201, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
+      propertyPath: tipoComponente
+      value: ADsda
+      objectReference: {fileID: 0}
     - target: {fileID: 4916360395434199105, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
       propertyPath: tipoRAM
       value: DDR5
@@ -70,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7436247392356874791, guid: 990f4f3de19b12543939196cfcc3a52e, type: 3}
       propertyPath: m_TagString
-      value: Objeto
+      value: RAM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
