@@ -13,6 +13,7 @@ TagManager:
   - M2
   - Case
   - Motherboard
+  - Screwdriver
   layers:
   - Default
   - TransparentFX
