@@ -7,17 +7,16 @@ public class CaseManager : MonoBehaviour
 {
     public GetMotherboard getMotherboard;
     public MotherboardManager mbManager;
-    List<string> list = new List<string>();
     public List<string> getMissingComponents()
     {
-        list = new List<string>();
+        List<string> list = new List<string>();
         if(getMotherboard.getMotherboard() == null)
         {
             list.Add("No se ha localizado el componente: Tarjeta madre");
         }
         else
         {
-            List<string> listComponents = mbManager.getComponents();
+            List<string> listComponents = mbManager.GetComponents();
             if (listComponents.Count > 0)
             {
                 foreach (string missComp in listComponents)

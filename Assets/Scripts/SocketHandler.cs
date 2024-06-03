@@ -16,23 +16,34 @@ public class SocketHandler : MonoBehaviour
     private XRSocketInteractor holsterSocket;
     public float activationDistance = 1.5f; // Distancia para activar el Socket
 
+
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Tratando de pegar una "+ other.tag);
+        StartCoroutine(HandleTriggerEnter(other));
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        StartCoroutine(HandleTriggerExit(other));
+    }
+
+    private IEnumerator HandleTriggerEnter(Collider other)
+    {
+        yield return null; // Espera un frame para evitar problemas con la cola de llamadas
+
         if (other.tag.Equals("RAM", StringComparison.OrdinalIgnoreCase))
         {
-            // Incrementar contador de objetos cuando un objeto entra en la gaveta
             Compatibilidad ram = other.GetComponent<Compatibilidad>();
             Debug.Log(ram.tipoComponente + " " + ram.frecuencia + " " + ram.capacidad);
             component = other.gameObject;
-            if (ram.ObtenerTipo() == motherboardScript.tipoCompatible && ram.ObtenerFrecuencia() <= motherboardScript.frecuenciaMaxima && ram.ObtenerCapacidad() <= motherboardScript.capacidadMaxima)
+            if (ram.ObtenerTipo() == motherboardScript.tipoCompatible &&
+                ram.ObtenerFrecuencia() <= motherboardScript.frecuenciaMaxima &&
+                ram.ObtenerCapacidad() <= motherboardScript.capacidadMaxima)
             {
-                //Debug.Log("RAM compatible");
                 allowed = true;
             }
             else
             {
-                //Debug.Log("RAM no compatible");
                 allowed = false;
             }
         }
@@ -42,13 +53,10 @@ public class SocketHandler : MonoBehaviour
             component = other.gameObject;
             if (motherboardScript.VerificarCompatibilidadCpu(cpu.ObtenerTipo()))
             {
-
-                //Debug.Log("CPU compatible");
                 allowed = true;
             }
             else
             {
-                //Debug.Log("CPU no compatible" + cpu.ObtenerTipo());
                 allowed = false;
             }
         }
@@ -58,13 +66,10 @@ public class SocketHandler : MonoBehaviour
             component = other.gameObject;
             if (motherboardScript.VerificarCompatibilidadGraphic(graphic.ObtenerTipo()))
             {
-
-                //Debug.Log("Graphic compatible");
                 allowed = true;
             }
             else
             {
-                //Debug.Log("Graphic no compatible" + graphic.ObtenerTipo());
                 allowed = false;
             }
         }
@@ -74,22 +79,35 @@ public class SocketHandler : MonoBehaviour
             component = m2.gameObject;
             if (motherboardScript.VerificarCompatibilidadM2(m2.ObtenerTipo()))
             {
-
-                //Debug.Log("M2 compatible"); 
                 allowed = true;
             }
             else
             {
-                //Debug.Log("M2 no compatible" + m2.ObtenerTipo());
                 allowed = false;
             }
         }
-
     }
-    void OnTriggerExit(Collider other)
+
+    private IEnumerator HandleTriggerExit(Collider other)
     {
-        //Debug.Log("Sacaron " + other.tag);
-        manager.setComponents(other.gameObject.tag, false);
+        yield return null; // Espera un frame para evitar problemas con la cola de llamadas
+
+        if (other.CompareTag("RAM") && (socket.name == "RamSocket1" || socket.name == "RamSocket2" || socket.name == "RamSocket3" || socket.name == "RamSocket4"))
+        {
+            manager.SetComponents(other.tag, false);
+        }
+        else if (other.CompareTag("CPU") && socket.name == "CpuSocket")
+        {
+            manager.SetComponents(other.tag, false);
+        }
+        else if (other.CompareTag("Graphic") && socket.name == "GraphicSocket")
+        {
+            manager.SetComponents(other.tag, false);
+        }
+        else if (other.CompareTag("M2") && socket.name == "M2Socket")
+        {
+            manager.SetComponents(other.tag, false);
+        }
     }
 
     // Start is called before the first frame update
@@ -144,18 +162,20 @@ public class SocketHandler : MonoBehaviour
                 {
                     //Debug.Log("La cara delantera del Cubo1 est� frente a la cara trasera del Cubo2.");
                     holsterSocket.enabled = true;
-                    manager.setComponents(component.tag, true);
+                    manager.SetComponents(component.tag, true);
                     //Debug.Log("Metieron " + component.tag);
                 }
                 else
                 {
                     //Debug.Log("Las caras no est�n una frente a la otra.");
                     holsterSocket.enabled = false;
+                    manager.SetComponents(component.tag, false);
                 }
             }
             else
             {
                 holsterSocket.enabled = false;
+                manager.SetComponents(component.tag, false);
             }
         }
     }
