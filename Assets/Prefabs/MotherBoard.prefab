@@ -1276,10 +1276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89183317d61fa0a42bb2e90b2a9415f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotherboardBoxCollider: {fileID: 0}
+  MotherboardBoxCollider: {fileID: 1731316964797141768}
   attatchPointTransform: {fileID: 47367198775829868}
   speed: 0.05
-  targetRotationX: 360
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  isActive: 0
 --- !u!1 &169996316249100592
 GameObject:
   m_ObjectHideFlags: 0
@@ -10023,6 +10025,7 @@ GameObject:
   - component: {fileID: 1731316964797141768}
   - component: {fileID: 3537504134779992972}
   - component: {fileID: 14421791659499879}
+  - component: {fileID: 8075709163989592054}
   m_Layer: 0
   m_Name: MotherBoard
   m_TagString: Motherboard
@@ -10040,7 +10043,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.4799891, y: 0.5192403, z: 0.5192403, w: -0.4799891}
   m_LocalPosition: {x: -0.387, y: 0.9813, z: 1.109}
-  m_LocalScale: {x: 4.123993, y: 4.123993, z: 4.123993}
+  m_LocalScale: {x: 4.123993, y: 4.0144987, z: 4.123993}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8183375548025593873}
@@ -10229,6 +10232,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfb15a4a76b57849bea2d60ca0f2bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8075709163989592054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521061872174679579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0060dfe48cf59664d888dc28aa76ab87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screwHandler1: {fileID: 4859465806497277363}
+  screwHandler2: {fileID: 4795332092340848826}
+  screwHandler3: {fileID: 594637135688449788}
+  screwHandler4: {fileID: 3927581864731217616}
 --- !u!1 &1524893910425036677
 GameObject:
   m_ObjectHideFlags: 0
@@ -11173,10 +11192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89183317d61fa0a42bb2e90b2a9415f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotherboardBoxCollider: {fileID: 0}
+  MotherboardBoxCollider: {fileID: 1731316964797141768}
   attatchPointTransform: {fileID: 6261024270529777892}
   speed: 0.05
-  targetRotationX: 360
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  isActive: 0
 --- !u!1 &1667149453948391255
 GameObject:
   m_ObjectHideFlags: 0
@@ -16725,7 +16746,9 @@ MonoBehaviour:
   MotherboardBoxCollider: {fileID: 1731316964797141768}
   attatchPointTransform: {fileID: 4931551040484128038}
   speed: 0.05
-  targetRotationX: 360
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  isActive: 0
 --- !u!1 &2610761101653990526
 GameObject:
   m_ObjectHideFlags: 0
@@ -28032,10 +28055,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89183317d61fa0a42bb2e90b2a9415f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotherboardBoxCollider: {fileID: 0}
+  MotherboardBoxCollider: {fileID: 1731316964797141768}
   attatchPointTransform: {fileID: 6532059465761742479}
   speed: 0.05
-  targetRotationX: 360
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  isActive: 0
 --- !u!1 &4539994116549458817
 GameObject:
   m_ObjectHideFlags: 0
@@ -37669,11 +37694,11 @@ MonoBehaviour:
   - Intel
   - Ryzen
   graphicCards:
-  - Nvidia
+  - MSI
   - AMD
   M2list:
-  - Ultra
-  - Pro
+  - ADATA
+  - TForce
 --- !u!1 &6012611966906189027
 GameObject:
   m_ObjectHideFlags: 0

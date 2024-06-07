@@ -14,21 +14,28 @@ public class ScrewSocketHandler : MonoBehaviour
 {
     private XRSocketInteractor socketInteractor;
 
+    private ActiveScrewCounter screwCounter;
+
     public BoxCollider MotherboardBoxCollider;
 
     public Transform attatchPointTransform;
 
     public float speed = 1f; // Degrees per second
-    public float targetRotationX = 360f; // Target Y rotation value
 
     private GameObject screw;
 
     private bool movingDown = true;
 
+    public SphereCollider rightHand;
+    public SphereCollider leftHand;
+
+    public bool isActive;
+
 
     void Awake()
     {
         socketInteractor = GetComponent<XRSocketInteractor>();
+        screwCounter = GetComponent<ActiveScrewCounter>();
 
         if (socketInteractor != null)
         {
@@ -83,9 +90,20 @@ public class ScrewSocketHandler : MonoBehaviour
 
                 }
                 attatchPointTransform.Rotate(new Vector3(0f, -500f, 0f) * Time.deltaTime);
-
-
             }
+
+            if(attatchPointTransform.localPosition.z >= -0.0015) {
+                Physics.IgnoreCollision(screw.GetComponent<BoxCollider>(), rightHand, false);
+                Physics.IgnoreCollision(screw.GetComponent<BoxCollider>(), leftHand, false);
+                isActive = false;
+            }
+            else
+            {
+                Physics.IgnoreCollision(screw.GetComponent<BoxCollider>(), rightHand, true);
+                Physics.IgnoreCollision(screw.GetComponent<BoxCollider>(), leftHand, true);
+                isActive = true;
+            }
+
         }
 
         
